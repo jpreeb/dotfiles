@@ -1,5 +1,6 @@
+export PATH=$PATH:$HOME/bin/:/usr/local/git/contrib/completion/git-completion.bash
+
 # git completion
-export PATH=/usr/local/git/bin:$PATH/usr/local/git/contrib/completion/git-completion.bash
 source /usr/local/git/contrib/completion/git-prompt.sh
 source /usr/local/git/contrib/completion/git-completion.bash
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
@@ -19,24 +20,27 @@ export HISTSIZE=1000000
 shopt -s histappend
 
 # aliases
+alias ll="ls -la -G"
+alias hosts="sudo vim /etc/hosts"
+alias lol="say -v Hysterical ahahahahahahahahahaha"
+
 alias chrome="open -a /Applications/Google\ Chrome.app"
 alias ffxp="/Applications/Firefox.app/Contents/MacOS/firefox-bin -p"
+
 alias g="git"
 alias gitx="open -a /Applications/GitX.app/"
 alias gpush="git push -f origin --all"
-alias hideFiles="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
-alias hosts="sudo vim /etc/hosts"
-alias ll="ls -la -G"
-alias lol="say -v Hysterical ahahahahahahahahahaha"
+
 alias showFiles="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
-alias sub="open -a Sublime\ Text.app"
+alias hideFiles="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
 
 # rebase all branches onto master until a conflict occurs
 function grebase () {
   git checkout master;
-  git branch | grep '^ ' | while read line;
-  do git checkout $line && git rebase master;
-  git checkout master;
+  git branch |
+    grep '^ ' |
+      while read line;
+        do git checkout $line && git rebase master; git checkout master;
   done;
 }
 

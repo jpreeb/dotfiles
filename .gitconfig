@@ -9,8 +9,8 @@
     ci = commit
     br = branch
     st = status
-    files = ! bash -c 'git show --pretty="format:"  --name-only "$(git merge-base "$(git rev-parse --abbrev-ref HEAD)" master)..HEAD" | grep -v "^$" | sort | uniq'
-    cur = rev-parse --abbrev-ref HEAD
+    fshow = ! sh -c 'git show --pretty="format:" --name-only $1 | grep -v "^$" | uniq | sed -e "s#^#`git rev-parse --show-toplevel`/#"' -
+    subl = ! sh -c 'subl `git fshow $1`' -
 [color]
     diff = auto
     status = auto

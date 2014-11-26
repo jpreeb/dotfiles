@@ -1,0 +1,20 @@
+[core]
+    excludesfile = ~/.gitignore
+[user]
+    name = Jon Reeb
+    email = jpreeb@gmail.com
+[alias]
+    g = git
+    co = checkout
+    ci = commit
+    br = branch
+    st = status
+    files = ! bash -c 'git show --pretty="format:"  --name-only "$(git merge-base "$(git rev-parse --abbrev-ref HEAD)" master)..HEAD" | grep -v "^$" | sort | uniq'
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+[rebase]
+    autosquash = true

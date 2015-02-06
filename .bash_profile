@@ -7,7 +7,7 @@ complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
   || complete -o default -o nospace -F _git g
 
 # Style bash prompt
-PS1='$(pwd) $(__git_ps1 "(%s) ")⚡  '
+PS1='\W $(__git_ps1 "(%s) ")⚡  '
 
 # terminal colors
 export CLICOLOR=1
@@ -19,6 +19,9 @@ export HISTFILESIZE=1000000000
 export HISTSIZE=1000000
 shopt -s histappend
 
+#scribd
+alias scribd="cd ~/Documents/scribd/git/scribox2/scribd"
+alias scribox="cd ~/Documents/scribd/git/scribox2/scribox"
 # aliases
 alias ll="ls -la -G"
 alias hosts="sudo vim /etc/hosts"

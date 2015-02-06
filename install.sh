@@ -17,5 +17,5 @@ ls -A |
       while read line;
 
         # create a symlink in the home directory
-        do ln -sf $HOME/.dotfiles/$line $HOME/;
+        do ln -sf $HOME/dotfiles/$line $HOME/;
 done;

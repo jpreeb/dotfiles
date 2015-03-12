@@ -47,6 +47,10 @@ function grebase () {
   done;
 }
 
+function gshow () {
+  g diff --name-only master | while read line; do subl $line; done;
+}
+
 # show all files in a git project
 function show() {
   git files | while read line; do open $line; done;

@@ -47,6 +47,16 @@ function grebase () {
   done;
 }
 
+# force push all other branches besides master to origin
+function gfpush () {
+  git checkout master;
+  git branch |
+    grep '^ ' |
+      while read line;
+        do git push -f origin $line;
+  done;
+}
+
 function gshow () {
   g diff --name-only master | while read line; do subl $line; done;
 }

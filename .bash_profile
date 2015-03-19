@@ -32,10 +32,11 @@ alias ffxp="/Applications/Firefox.app/Contents/MacOS/firefox-bin -p"
 
 alias g="git"
 alias gitx="open -a /Applications/GitX.app/"
-alias gpush="git push -f origin --all"
 
 alias showFiles="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias hideFiles="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
+
+alias gpull="git checkout master && git pull origin master"
 
 # rebase all branches onto master until a conflict occurs
 function grebase () {
@@ -59,9 +60,4 @@ function gfpush () {
 
 function gshow () {
   g diff --name-only master | while read line; do subl $line; done;
-}
-
-# show all files in a git project
-function show() {
-  git files | while read line; do open $line; done;
 }

@@ -38,24 +38,26 @@ alias hideFiles="defaults write com.apple.finder AppleShowAllFiles FALSE && kill
 
 alias gpull="git checkout master && git pull origin master"
 
-# rebase all branches onto master until a conflict occurs
+# rebase all branches onto master
 function grebase () {
   git checkout master;
   git branch |
-    grep '^ ' |
-      while read line;
-        do git checkout $line && git rebase master; git checkout master;
-  done;
+    grep -v "master" | # skip master
+      grep -v $1 | # skip branch at arg 1
+        while read line;
+          do git checkout $line && git rebase master; git checkout master;
+        done;
 }
 
-# force push all other branches besides master to origin
+# force push to origin
 function gfpush () {
   git checkout master;
   git branch |
-    grep '^ ' |
-      while read line;
-        do git push -f origin $line;
-  done;
+    grep -v "master" | # skip master
+      grep -v $1 | # skip branch at arg 1
+        while read line;
+          do git push -f origin $line;
+        done;
 }
 
 function gshow () {

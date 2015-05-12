@@ -43,10 +43,9 @@ function grebase () {
   git checkout master;
   git branch |
     grep -v "master" | # skip master
-      grep -v $1 | # skip branch at arg 1
-        while read line;
-          do git checkout $line && git rebase master; git checkout master;
-        done;
+      while read line;
+        do git checkout $line && git rebase master; git checkout master;
+      done;
 }
 
 # force push to origin
@@ -54,10 +53,9 @@ function gfpush () {
   git checkout master;
   git branch |
     grep -v "master" | # skip master
-      grep -v $1 | # skip branch at arg 1
-        while read line;
-          do git push -f origin $line;
-        done;
+      while read line;
+        do git push -f origin $line;
+      done;
 }
 
 function gshow () {

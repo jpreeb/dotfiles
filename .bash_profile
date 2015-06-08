@@ -20,8 +20,8 @@ export HISTSIZE=1000000
 shopt -s histappend
 
 #scribd
-alias scribd="cd ~/Documents/scribd/git/scribox2/scribd"
-alias scribox="cd ~/Documents/scribd/git/scribox2/scribox"
+alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
+alias devbox="cd ~/Documents/scribd/git/scribd/devbox"
 # aliases
 alias ll="ls -la -G"
 alias hosts="sudo vim /etc/hosts"

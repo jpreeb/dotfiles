@@ -21,7 +21,7 @@ shopt -s histappend
 
 #scribd
 alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
-alias devbox="cd ~/Documents/scribd/git/scribd/devbox"
+alias devbox="cd ~/Documents/scribd/git/scribd/devbox && ssh devbox.lo"
 # aliases
 alias ll="ls -la -G"
 alias hosts="sudo vim /etc/hosts"

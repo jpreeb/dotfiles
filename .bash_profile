@@ -39,8 +39,11 @@ alias hideFiles="defaults write com.apple.finder AppleShowAllFiles FALSE && kill
 alias gpull="git checkout master && git pull origin master"
 
 # see a visual git tree in the command line
-alias ggraphsimple="git log --graph --decorate --all --simplify-by-decoration"
-alias ggraph="git log --graph --decorate --all"
+alias ggraphsimple="git log --graph --decorate --branches=*jon/* --simplify-by-decoration"
+alias ggraph="git log --graph --decorate --branches=*jon/*"
+
+# see all of my local and remote branches
+alias gbr="git branch -a --list *jon/"
 
 # rebase all branches onto master
 function grebase () {

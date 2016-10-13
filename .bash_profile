@@ -50,7 +50,7 @@ function grebase () {
   git checkout master;
   git branch |
     grep -v "master" | # skip master
-      grep "jon/" | # only my branches
+      grep -e "^\s*jon/" | # only my branches
         while read line;
           do git checkout $line && git rebase master; git checkout master;
         done;
@@ -61,7 +61,7 @@ function gfpush () {
   git checkout master;
   git branch |
     grep -v "master" | # skip master
-      grep "jon/" | # only my branches
+      grep -e "^\s*jon/" | # only my branches
         while read line;
           do git push -f origin $line;
         done;

@@ -1,5 +1,7 @@
 export PATH=$PATH:$HOME/bin/:/usr/local/git/contrib/completion/git-completion.bash
 
+ssh-add
+
 # git completion
 source /usr/local/git/contrib/completion/git-prompt.sh
 source /usr/local/git/contrib/completion/git-completion.bash
@@ -21,7 +23,7 @@ shopt -s histappend
 
 #scribd
 alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
-alias devbox="cd ~/Documents/scribd/git/scribd/devbox && ssh devbox.lo"
+alias devbox="cd ~/Documents/scribd/git/scribd/devbox && ssh devbox.lo -t 'cd current;bash'"
 # aliases
 alias ll="ls -la -G"
 alias hosts="sudo vim /etc/hosts"

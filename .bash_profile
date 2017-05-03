@@ -1,6 +1,5 @@
 export PATH=$PATH:$HOME/bin/:/usr/local/git/contrib/completion/git-completion.bash
-
-ssh-add
+source /usr/local/opt/chruby/share/chruby/chruby.sh
 
 # git completion
 source /usr/local/git/contrib/completion/git-prompt.sh
@@ -23,13 +22,12 @@ shopt -s histappend
 
 #scribd
 alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
-alias devbox="cd ~/Documents/scribd/git/scribd/devbox && ssh devbox.lo -t 'cd current;bash'"
+alias devbox="cd ~/Documents/scribd/git/scribd/devbox && ssh devbox.lo -t 'cd current;source ~/.bash_profile;bash'"
 # aliases
 alias ll="ls -la -G"
 alias hosts="sudo vim /etc/hosts"
 alias lol="say -v Hysterical ahahahahahahahahahaha"
 
-alias chrome="open -a /Applications/Google\ Chrome.app"
 alias ffxp="/Applications/Firefox.app/Contents/MacOS/firefox-bin -p"
 
 alias g="git"
@@ -72,3 +70,6 @@ function gfpush () {
 function gshow () {
   g diff --name-only master | while read line; do subl $line; done;
 }
+
+chruby 2.3.3
+scribd

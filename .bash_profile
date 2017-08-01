@@ -20,10 +20,12 @@ export HISTFILESIZE=1000000000
 export HISTSIZE=1000000
 shopt -s histappend
 
+alias dotfiles="cd ~/dotfiles"
+
 #scribd
 alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
 alias devbox="cd ~/Documents/scribd/git/scribd/devbox && ssh devbox.lo -t 'cd current;source ~/.bash_profile;bash'"
-alias devbox="cd ~/Documents/scribd/git/scribd/components"
+alias components="cd ~/Documents/scribd/git/scribd/components"
 
 # aliases
 alias ll="ls -la -G"

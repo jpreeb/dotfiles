@@ -34,20 +34,19 @@ alias lol="say -v Hysterical ahahahahahahahahahaha"
 
 alias ffxp="/Applications/Firefox.app/Contents/MacOS/firefox-bin -p"
 
-alias g="git"
-alias gitx="open -a /Applications/GitX.app/"
-
 alias showFiles="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias hideFiles="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
 
+alias rmjsxjs="find . -name "*.jsxjs" -type f -delete"
+
+# git related
+alias g="git"
+alias gitx="open -a /Applications/GitX.app/"
 alias gpull="git checkout master && git pull origin master"
 
 # see a visual git tree in the command line
 alias ggraphsimple="git log --graph --decorate --branches=*jon/* --simplify-by-decoration"
 alias ggraph="git log --graph --decorate --branches=*jon/*"
-
-# see all of my local and remote branches
-alias gbr="git branch -a --list *jon/"
 
 # rebase all branches onto master
 function grebase () {
@@ -71,6 +70,7 @@ function gfpush () {
         done;
 }
 
+# open files in sublime when current with master
 function gshow () {
   g diff --name-only master | while read line; do subl $line; done;
 }

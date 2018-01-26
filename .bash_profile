@@ -66,7 +66,7 @@ function gfpush () {
     grep -v "master" | # skip master
       grep -e "^\s*jon/" | # only my branches
         while read line;
-          do git push -f origin $line;
+          do git push --force-with-lease origin $line;
         done;
 }
 

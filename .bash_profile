@@ -43,6 +43,7 @@ alias rmjsxjs="find . -name "*.jsxjs" -type f -delete"
 alias g="git"
 alias gitx="open -a /Applications/GitX.app/"
 alias gpull="git checkout master && git pull origin master"
+alias gprune="git checkout mater && git fetch --prune"
 
 # see a visual git tree in the command line
 alias ggraphsimple="git log --graph --decorate --branches=*jon/* --simplify-by-decoration"

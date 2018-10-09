@@ -1,5 +1,4 @@
 export PATH=$PATH:$HOME/bin/:/usr/local/git/contrib/completion/git-completion.bash
-source /usr/local/opt/chruby/share/chruby/chruby.sh
 
 # git completion
 source /usr/local/git/contrib/completion/git-prompt.sh
@@ -8,7 +7,7 @@ complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
   || complete -o default -o nospace -F _git g
 
 # Style bash prompt
-PS1='\W $(__git_ps1 "(%s) ")⚡  '
+PS1='\W $(__git_ps1 "(%s) ")~ '
 
 # terminal colors
 export CLICOLOR=1
@@ -22,7 +21,7 @@ shopt -s histappend
 
 alias dotfiles="cd ~/dotfiles"
 
-#scribd
+# scribd
 alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
 alias devbox="cd ~/Documents/scribd/git/scribd/devbox && ssh devbox.lo -t 'cd current;source ~/.bash_profile;bash'"
 alias components="cd ~/Documents/scribd/git/scribd/components"
@@ -37,7 +36,9 @@ alias ffxp="/Applications/Firefox.app/Contents/MacOS/firefox-bin -p"
 alias showFiles="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias hideFiles="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
 
-alias rmjsxjs="find . -name "*.jsxjs" -type f -delete"
+alias rmjsxjs="scribd && find . -name "*.jsxjs" -type f -delete"
+alias rmjsxcss="scribd && find . -name "*.jsxcss" -type f -delete"
+alias rmjsx="scribd && rmjsxjs;rmjsxcss"
 
 # git related
 alias g="git"
@@ -76,9 +77,10 @@ function gshow () {
   g diff --name-only master | while read line; do subl $line; done;
 }
 
-chruby 2.3.3
 scribd
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

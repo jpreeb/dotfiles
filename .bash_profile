@@ -18,6 +18,8 @@ export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000
 shopt -s histappend
+# to remove duplicates already created
+# tac ~/.bash_history | awk '!x[$0]++' | tac
 
 alias dotfiles="cd ~/dotfiles"
 

@@ -21,6 +21,8 @@ shopt -s histappend
 # to remove duplicates already created
 # tac ~/.bash_history | awk '!x[$0]++' | tac
 
+rvm use 2.3.1
+
 alias dotfiles="cd ~/dotfiles"
 
 # scribd
@@ -86,3 +88,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

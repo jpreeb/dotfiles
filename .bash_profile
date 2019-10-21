@@ -21,12 +21,11 @@ shopt -s histappend
 # to remove duplicates already created
 # tac ~/.bash_history | awk '!x[$0]++' | tac
 
-rvm use 2.3.1
-
 alias dotfiles="cd ~/dotfiles"
 
 # scribd
 alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
+alias shared="cd ~/Documents/scribd/git/scribd/shared"
 alias devbox="cd ~/Documents/scribd/git/scribd/devbox && ssh devbox.lo -t 'cd current;source ~/.bash_profile;bash'"
 alias components="cd ~/Documents/scribd/git/scribd/components"
 
@@ -47,7 +46,7 @@ alias rmjsx="scribd && rmjsxjs;rmjsxcss"
 # git related
 alias g="git"
 alias gitx="open -a /Applications/GitX.app/"
-alias gpull="git checkout master && git pull origin master"
+alias gpull="git checkout master && git pull"
 alias gprune="git checkout mater && git fetch --prune"
 
 # see a visual git tree in the command line
@@ -93,3 +92,4 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+if [ -f ~/.bashrc ]; then . ~/.bashrc; fi

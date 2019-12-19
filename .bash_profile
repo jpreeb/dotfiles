@@ -26,6 +26,7 @@ alias dotfiles="cd ~/dotfiles"
 # scribd
 alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
 alias shared="cd ~/Documents/scribd/git/scribd/shared"
+alias i18n="cd ~/Documents/scribd/git/scribd/i18n"
 alias devbox="cd ~/Documents/scribd/git/scribd/devbox && ssh devbox.lo -t 'cd current;source ~/.bash_profile;bash'"
 alias components="cd ~/Documents/scribd/git/scribd/components"
 
@@ -93,3 +94,5 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh

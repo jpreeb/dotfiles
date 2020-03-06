@@ -26,9 +26,9 @@ alias dotfiles="cd ~/dotfiles"
 # scribd
 alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
 alias shared="cd ~/Documents/scribd/git/scribd/shared"
-alias i18n="cd ~/Documents/scribd/git/scribd/i18n"
 alias devbox="cd ~/Documents/scribd/git/scribd/devbox && ssh devbox.lo -t 'cd current;source ~/.bash_profile;bash'"
 alias components="cd ~/Documents/scribd/git/scribd/components"
+alias mono="cd ~/Documents/scribd/git/mono"
 
 # aliases
 alias ll="ls -la -G"
@@ -79,6 +79,10 @@ function gfpush () {
 # open files in sublime when current with master
 function gshow () {
   g diff --name-only master | while read line; do subl $line; done;
+}
+
+function lokalise() {
+  branch="jon/$1"; i18n && git checkout master && git pull origin master && git checkout -b $branch && yarn && yarn update:i18n && git add -am 'fetch latest from lokalise' && yarn version --patch && git push origin $branch;
 }
 
 scribd

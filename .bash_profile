@@ -27,7 +27,6 @@ alias dotfiles="cd ~/dotfiles"
 alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
 alias shared="cd ~/Documents/scribd/git/scribd/shared"
 alias devbox="cd ~/Documents/scribd/git/scribd/devbox && ssh devbox.lo -t 'cd current;source ~/.bash_profile;bash'"
-alias components="cd ~/Documents/scribd/git/scribd/components"
 alias mono="cd ~/Documents/scribd/git/mono"
 
 # aliases

@@ -53,6 +53,9 @@ alias gprune="git checkout mater && git fetch --prune"
 alias ggraphsimple="git log --graph --decorate --branches=*jon/* --simplify-by-decoration"
 alias ggraph="git log --graph --decorate --branches=*jon/*"
 
+# devkube init in dev mode
+alias dev="ASSETS_MODE=build_dev devkube init"
+
 # rebase all branches onto master
 function grebase () {
   git checkout master;

@@ -56,6 +56,9 @@ alias ggraph="git log --graph --decorate --branches=*jon/*"
 # devkube init in dev mode
 alias dev="ASSETS_MODE=build_dev devkube init"
 
+# devkube frontend bash
+alias devbash="devkube exec frontend bash"
+
 # rebase all branches onto master
 function grebase () {
   git checkout master;

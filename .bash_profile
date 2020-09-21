@@ -84,11 +84,20 @@ function gfpush () {
 
 # open files in sublime when current with master
 function gshow () {
-  g diff --name-only master | while read line; do subl $line; done;
+  g diff --name-only master | while read line; do code $line; done;
 }
 
 function lokalise() {
   branch="jon/$1"; i18n && git checkout master && git pull origin master && git checkout -b $branch && yarn && yarn update:i18n && git add -am 'fetch latest from lokalise' && yarn version --patch && git push origin $branch;
+}
+
+monoSync() {
+  config=~/.devkube/devkube_config_custom.yaml
+  if [[ $1 == "disable" ]]; then
+    mv ${config}{,.disabled}
+  else
+    mv ${config}{.disabled,}
+  fi
 }
 
 scribd

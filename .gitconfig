@@ -1,7 +1,7 @@
 [core]
     excludesfile = ~/.gitignore
 [user]
-    name = Jon Reeb
+	name = jon
     email = jon@scribd.com
 [alias]
     g = git

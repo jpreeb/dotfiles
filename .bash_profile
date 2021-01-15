@@ -47,7 +47,10 @@ alias rmjsx="scribd && rmjsxjs;rmjsxcss"
 alias g="git"
 alias gitx="open -a /Applications/GitX.app/"
 alias gpull="git checkout master && git pull && git fetch --prune"
-alias gprune="git checkout mater && git fetch --prune"
+alias gprune="git checkout master && git fetch --prune"
+
+alias ghpull="git checkout main && git pull && git fetch --prune"
+alias ghprune="git checkout main && git fetch --prune"
 
 # see a visual git tree in the command line
 alias ggraphsimple="git log --graph --decorate --branches=*jon/* --simplify-by-decoration"
@@ -71,6 +74,17 @@ function grebase () {
         done;
 }
 
+# rebase all branches onto main
+function ghrebase () {
+  git checkout main;
+  git branch |
+    grep -v "main" | # skip main
+      grep -e "^\s*jon/" | # only my branches
+        while read line;
+          do git checkout $line && git rebase main; git checkout main;
+        done;
+}
+
 # force push to origin
 function gfpush () {
   git checkout master;
@@ -82,13 +96,25 @@ function gfpush () {
         done;
 }
 
+# force push to origin
+function ghfpush () {
+  git checkout main;
+  git branch |
+    grep -v "main" | # skip main
+      grep -e "^\s*jon/" | # only my branches
+        while read line;
+          do git push --force-with-lease origin $line;
+        done;
+}
+
 # open files in sublime when current with master
 function gshow () {
   g diff --name-only master | while read line; do code $line; done;
 }
 
-function lokalise() {
-  branch="jon/$1"; i18n && git checkout master && git pull origin master && git checkout -b $branch && yarn && yarn update:i18n && git add -am 'fetch latest from lokalise' && yarn version --patch && git push origin $branch;
+# open files in sublime when current with main
+function ghshow () {
+  g diff --name-only main | while read line; do code $line; done;
 }
 
 monoSync() {

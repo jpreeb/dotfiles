@@ -46,11 +46,8 @@ alias rmjsx="scribd && rmjsxjs;rmjsxcss"
 # git related
 alias g="git"
 alias gitx="open -a /Applications/GitX.app/"
-alias gpull="git checkout master && git pull && git fetch --prune"
-alias gprune="git checkout master && git fetch --prune"
-
-alias ghpull="git checkout main && git pull && git fetch --prune"
-alias ghprune="git checkout main && git fetch --prune"
+alias gpull="git checkout main && git pull && git fetch --prune"
+alias gprune="git checkout main && git fetch --prune"
 
 # see a visual git tree in the command line
 alias ggraphsimple="git log --graph --decorate --branches=*jon/* --simplify-by-decoration"
@@ -63,19 +60,8 @@ alias dev="ASSETS_MODE=build_dev devkube init"
 alias devfbash="devkube exec frontend bash"
 alias devrbash="devkube exec rails bash"
 
-# rebase all branches onto master
-function grebase () {
-  git checkout master;
-  git branch |
-    grep -v "master" | # skip master
-      grep -e "^\s*jon/" | # only my branches
-        while read line;
-          do git checkout $line && git rebase master; git checkout master;
-        done;
-}
-
 # rebase all branches onto main
-function ghrebase () {
+function grebase () {
   git checkout main;
   git branch |
     grep -v "main" | # skip main
@@ -87,17 +73,6 @@ function ghrebase () {
 
 # force push to origin
 function gfpush () {
-  git checkout master;
-  git branch |
-    grep -v "master" | # skip master
-      grep -e "^\s*jon/" | # only my branches
-        while read line;
-          do git push --force-with-lease origin $line;
-        done;
-}
-
-# force push to origin
-function ghfpush () {
   git checkout main;
   git branch |
     grep -v "main" | # skip main
@@ -107,13 +82,8 @@ function ghfpush () {
         done;
 }
 
-# open files in sublime when current with master
+# open files in edtior when current with main
 function gshow () {
-  g diff --name-only master | while read line; do code $line; done;
-}
-
-# open files in sublime when current with main
-function ghshow () {
   g diff --name-only main | while read line; do code $line; done;
 }
 

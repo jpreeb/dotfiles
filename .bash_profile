@@ -45,7 +45,6 @@ alias rmjsx="scribd && rmjsxjs;rmjsxcss"
 
 # git related
 alias g="git"
-alias gitx="open -a /Applications/GitX.app/"
 alias gpull="git checkout main && git pull && git fetch --prune"
 alias gprune="git checkout main && git fetch --prune"
 

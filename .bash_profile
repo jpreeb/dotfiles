@@ -52,6 +52,7 @@ alias gprune="git checkout main && git fetch --prune"
 # see a visual git tree in the command line
 alias ggraphsimple="git log --graph --decorate --branches=*jon/* --simplify-by-decoration"
 alias ggraph="git log --graph --decorate --branches=*jon/*"
+alias graph="git log --graph --oneline --branches"
 
 # devkube init in dev mode
 alias dev="ASSETS_MODE=build_dev devkube init"

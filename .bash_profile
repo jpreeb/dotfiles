@@ -6,6 +6,8 @@ source /usr/local/git/contrib/completion/git-completion.bash
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
   || complete -o default -o nospace -F _git g
 
+export GEM_HOME="$HOME/.gem"
+
 # Style bash prompt
 PS1='\W $(__git_ps1 "(%s) ")~ '
 
@@ -24,9 +26,8 @@ shopt -s histappend
 alias dotfiles="cd ~/dotfiles"
 
 # scribd
+alias authors="cd ~/Documents/scribd/git/scribd/mfe-authors"
 alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
-alias shared="cd ~/Documents/scribd/git/scribd/shared"
-alias devbox="cd ~/Documents/scribd/git/scribd/devbox && ssh devbox.lo -t 'cd current;source ~/.bash_profile;bash'"
 alias mono="cd ~/Documents/scribd/git/mono"
 
 # aliases
@@ -96,7 +97,7 @@ monoSync() {
   fi
 }
 
-scribd
+authors
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -111,3 +112,5 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

@@ -1,5 +1,6 @@
 [core]
     excludesfile = ~/.gitignore
+	editor = code --wait
 [user]
 	name = jon
     email = jon@scribd.com

@@ -61,6 +61,9 @@ alias dev="ASSETS_MODE=build_dev devkube init"
 alias devfbash="devkube exec frontend bash"
 alias devrbash="devkube exec rails bash"
 
+# unlink all linked modules
+alias yarnunlink="rm -rf ~/.config/yarn/link/*"
+
 # rebase all branches onto main
 function grebase () {
   git checkout main;

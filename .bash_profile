@@ -29,7 +29,7 @@ alias dotfiles="cd ~/dotfiles"
 alias authors="cd ~/Documents/scribd/git/scribd/mfe-authors"
 alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
 alias mono="cd ~/Documents/scribd/git/mono"
-alias nova-ui-components="cd ~/Documents/scribd/git/nova-ui-components"
+alias nova-ui-components="cd ~/Documents/scribd/git/scribd/nova-ui-components"
 
 # aliases
 alias ll="ls -la -G"

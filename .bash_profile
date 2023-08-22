@@ -28,7 +28,7 @@ alias dotfiles="cd ~/dotfiles"
 # scribd
 alias authors="cd ~/Documents/scribd/git/scribd/mfe-authors"
 alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
-alias mono="cd ~/Documents/scribd/git/mono"
+alias npm-packages="cd ~/Documents/scribd/git/scribd/npm-packages"
 alias nova-ui-components="cd ~/Documents/scribd/git/scribd/nova-ui-components"
 
 # aliases
@@ -92,16 +92,7 @@ function gshow () {
   g diff --name-only main | while read line; do code $line; done;
 }
 
-monoSync() {
-  config=~/.devkube/devkube_config_custom.yaml
-  if [[ $1 == "disable" ]]; then
-    mv ${config}{,.disabled}
-  else
-    mv ${config}{.disabled,}
-  fi
-}
-
-authors
+scribd
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

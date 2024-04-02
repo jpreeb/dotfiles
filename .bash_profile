@@ -30,6 +30,7 @@ alias authors="cd ~/Documents/scribd/git/scribd/mfe-authors"
 alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
 alias npm-packages="cd ~/Documents/scribd/git/scribd/npm-packages"
 alias nova-ui-components="cd ~/Documents/scribd/git/scribd/nova-ui-components"
+alias api-gateway="cd ~/Documents/scribd/git/scribd/api-gateway"
 
 # aliases
 alias ll="ls -la -G"

@@ -26,11 +26,12 @@ shopt -s histappend
 alias dotfiles="cd ~/dotfiles"
 
 # scribd
-alias authors="cd ~/Documents/scribd/git/scribd/mfe-authors"
-alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
-alias npm-packages="cd ~/Documents/scribd/git/scribd/npm-packages"
-alias nova-ui-components="cd ~/Documents/scribd/git/scribd/nova-ui-components"
 alias api-gateway="cd ~/Documents/scribd/git/scribd/api-gateway"
+alias mfe-authors="cd ~/Documents/scribd/git/scribd/mfe-authors"
+alias mfe-landing-pages="cd ~/Documents/scribd/git/scribd/mfe-landing-pages"
+alias nova-ui-components="cd ~/Documents/scribd/git/scribd/nova-ui-components"
+alias npm-packages="cd ~/Documents/scribd/git/scribd/npm-packages"
+alias scribd="cd ~/Documents/scribd/git/scribd/scribd"
 
 # aliases
 alias ll="ls -la -G"
